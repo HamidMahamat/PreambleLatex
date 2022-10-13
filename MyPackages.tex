@@ -1,0 +1,67 @@
+%%%%%%%%%%%% Package %%%%%%%%%%%
+\usepackage[bold=0.6]{xfakebold} %Pour le gras
+\usepackage{esvect}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[autolanguage]{numprint} % Pour écrire les nombres comme dans la langue du text
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsfonts, amsthm}
+\usepackage{systeme} 
+\usepackage{empheq,etoolbox}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{stmaryrd}
+\usepackage{bbm}
+\usepackage{booktabs}
+% Interligne
+\usepackage{setspace}
+% \singlespacing
+%\onehalfspacing
+% \doublespacing
+\usepackage{multirow}
+\usepackage{adjustbox}
+
+
+%%%%%% Geometry %%%%%%%
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+\savegeometry{1}
+
+\geometry{left=1cm,right=1cm,top=2.7cm,bottom=1.4cm}
+\savegeometry{2}
+
+\geometry{left=2.5cm,right=2.5cm,top=3cm,bottom=3cm}
+\savegeometry{3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{graphicx,mwe,fancyhdr}
+\usepackage{fancybox}
+\usepackage{siunitx}
+\sisetup{locale = FR,
+	detect-all,range-phrase=-,     
+	range-units=single,
+	separate-uncertainty = true,
+	multi-part-units = single
+}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true}
+\usepackage[dvipsnames]{xcolor}
+
+
+%%%%% Graphique %%%%%%%%
+\usepackage{tikz}
+\tikzset{>=stealth}
+\usepackage{pgfplots,pgfplotstable}
+\usepackage[miktex]{gnuplottex}
+\pgfkeys{/pgf/number format/1000 sep={\,}, /pgf/number format/use comma,  } % Pour avoir des virgules au lieu des points comme séparateur décimal dans les Axes graph
+%\pgfkeys{/pgf/plot/gnuplot call='C:\Program Files\gnuplot\bin\gnuplot'}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\definecolor{qqqqff}{rgb}{0,0,1}
