@@ -5,6 +5,7 @@
 \renewcommand{\Re}{\text{Re}}			 % Partie réelle
 \DeclareMathOperator{\sgn}{\text{sgn}}	 % Fonction signe
 \DeclareMathOperator{\e}{\text{e}}		 % L'opérateur exponentiel e
+\newcommand{\iu}{\mathrm{i}}			 % i imaginaire complexe
 \newcommand{\deriv}{\text{d}}			 % le d de la différenciabilité
 \newcommand{\ens}[1]{\mathbb{#1}}              					%Ensemble usuelle : N, Z, R, C, Q, K
 \newcommand{\abs}[1]{\left\vert {#1}\right\vert}				%Valeur absolue
@@ -39,15 +40,38 @@
 \renewcommand*{\overrightarrow}[1]{\vbox{\halign{##\cr 
 			\tiny\rightarrowfill\cr\noalign{\nointerlineskip\vskip1pt} 
 			$#1\mskip2mu$\cr}}}
-\newcommand{\vecteur}[1]{\overrightarrow{#1}}							%Vecteur avec une grande fleche
+\newcommand{\vecteur}[1]{\overrightarrow{#1}\hspace*{-2pt}}							%Vecteur avec une grande fleche
 \newcommand{\Int}[4]{\int_{#1}^{#2} {#3} \mathrm{d}#4}					%Intégrale
 \renewcommand{\thefootnote}{(\alph{footnote})}	
+\DeclareMathOperator{\rot}{\vecteur{\text{rot}}} 						% Rotationnel
+\DeclareMathOperator{\divergence}{\mathrm{div}}						% Divergence
+\DeclareMathOperator{\gradient}{\vecteur{\mathrm{grad}}}				% Gradient
 
+%%%%%% Definition de la gaussienne pour PGF %%%%%
+\pgfmathdeclarefunction{gauss}{2}{%
+	\pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+%% variable de gauss(<moyenne>,<ecart-type>)
+
+
+\pgfplotsset{
+	legend entry/.initial=,
+	every axis plot post/.code={%
+		\pgfkeysgetvalue{/pgfplots/legend entry}\tempValue
+		\ifx\tempValue\empty
+		\pgfkeysalso{/pgfplots/forget plot}%
+		\else
+		\expandafter\addlegendentry\expandafter{\tempValue}%
+		\fi
+	},
+}
+
+
+\setBold[0.2] % Active la police grasse 
 
 %%%%%%%%% Environnement Perso %%%%%%%%
 \theoremstyle{definition}	 %Garde la même police pour l'environnement 
-\newtheorem{exo}{Exercice}[] % Création de l'environnement exo dont le numérotage est indépendant des autres environnement
-\newtheorem{question}{}[exo] % Création de l'environnement question dont le numerotage depend de l'environnement exo
+\newtheorem{question}{Question}[] % Création de l'environnement exo dont le numérotage est indépendant des autres environnement
+\newtheorem{contrainte}{Contrainte}[] % Création de l'environnement question dont le numerotage depend de l'environnement exo
+\pagestyle{plain} 
 
-
-%\setBold[0.2] % Active la police grasse 
