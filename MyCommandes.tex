@@ -43,6 +43,29 @@
 \newcommand{\vecteur}[1]{\overrightarrow{#1}\hspace*{-2pt}}							%Vecteur avec une grande fleche
 \newcommand{\Int}[4]{\int_{#1}^{#2} {#3} \mathrm{d}#4}					%Intégrale
 \renewcommand{\thefootnote}{(\alph{footnote})}	
+
+%% colorbox function command
+\newcommand*{\colorboxed}{}
+\def\colorboxed#1#{%
+	\colorboxedAux{#1}%
+}
+\newcommand*{\colorboxedAux}[3]{%
+	% #1: optional argument for color model
+	% #2: color specification
+	% #3: formula
+	\begingroup
+	\colorlet{cb@saved}{.}%
+	\color#1{#2}%
+	\boxed{%
+		\color{cb@saved}%
+		#3%
+	}%
+	\endgroup
+}
+
+\setlength{\fboxrule}{0.3mm}
+
+
 \DeclareMathOperator{\rot}{\vecteur{\text{rot}}} 						% Rotationnel
 \DeclareMathOperator{\divergence}{\mathrm{div}}						% Divergence
 \DeclareMathOperator{\gradient}{\vecteur{\mathrm{grad}}}				% Gradient
@@ -65,6 +88,8 @@
 		\fi
 	},
 }
+
+
 
 
 \setBold[0.2] % Active la police grasse 
