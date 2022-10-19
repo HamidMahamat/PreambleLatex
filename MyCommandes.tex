@@ -7,6 +7,13 @@
 \DeclareMathOperator{\e}{\text{e}}		 % L'opérateur exponentiel e
 \newcommand{\iu}{\mathrm{i}}			 % i imaginaire complexe
 \newcommand{\deriv}{\text{d}}			 % le d de la différenciabilité
+\newcommand\smallO{                      % petit "ô"
+	\mathchoice
+	{{\scriptstyle\mathcal{O}}}% \displaystyle
+	{{\scriptstyle\mathcal{O}}}% \textstyle
+	{{\scriptscriptstyle\mathcal{O}}}% \scriptstyle
+	{\scalebox{.7}{$\scriptscriptstyle\mathcal{O}$}}%\scriptscriptstyle
+}
 \newcommand{\ens}[1]{\mathbb{#1}}              					%Ensemble usuelle : N, Z, R, C, Q, K
 \newcommand{\abs}[1]{\left\vert {#1}\right\vert}				%Valeur absolue
 \newcommand{\partiel}[2]{\frac{\partial {#1}}{\partial {#2}}}	%derivée partielle
