@@ -1,16 +1,16 @@
 %%%%%%%%%%%% Package %%%%%%%%%%%
 \usepackage{etex}
-\usepackage{xfakebold} %Pour le gras
+%\usepackage[bold=.2]{xfakebold} %Pour le gras
 \usepackage{esvect}
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
 \usepackage[autolanguage]{numprint} % Pour écrire les nombres comme dans la langue du text
 \usepackage[T1]{fontenc}
 \usepackage{amsmath,amssymb,amsfonts, amsthm}
+\usepackage{algorithm2e}
 \usepackage{systeme} 
 \usepackage{empheq,etoolbox}
 \usepackage{array}
-\usepackage{nicematrix}
 \usepackage{enumitem}
 \usepackage{mathrsfs}
 \usepackage{mathtools}
@@ -27,7 +27,8 @@
 % \doublespacing
 \usepackage{multirow, multicol}
 \usepackage{adjustbox}
-\usepackage{cite}
+%\usepackage{biblatex}
+\usepackage{cite} % conflict with biblatex
 \usepackage{titlesec}
 
 \usepackage{listings}
@@ -50,7 +51,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{graphicx,mwe,fancyhdr}
+\usepackage{caption, subcaption}
 \usepackage{fancybox}
+\usepackage{float}
 \usepackage{siunitx}
 \sisetup{locale = FR,
 	detect-all,range-phrase=-,     
@@ -73,13 +76,15 @@
 %%%%% Graphique %%%%%%%%
 %\usepackage{tikz
 	\usepackage{tikz-network}       % Pour la théorie des graphes (vertices & edges)
-	
+	\usepackage{tikz-3dplot}
+	\tdplotsetmaincoords{45}{135}
 	\tikzset{>=stealth}
 	\usepackage{pgfplots,pgfplotstable}
-	%\usepackage[miktex]{gnuplottex}
+	\usepackage[miktex]{gnuplottex}
 	\pgfkeys{/pgf/number format/1000 sep={\,}, /pgf/number format/use comma,  } % Pour avoir des virgules au lieu des points comme séparateur décimal dans les Axes graph
 	%\pgfkeys{/pgf/plot/gnuplot call='C:\Program Files\gnuplot\bin\gnuplot'}
 	\pgfplotsset{compat=newest}
+	\usepgfplotslibrary{units, groupplots}
 	\usepackage{mathrsfs}
 	\usetikzlibrary{shapes.geometric, shapes.misc, intersections,calc, arrows}
 	\lstset{ %
@@ -108,4 +113,6 @@
 		escapeinside={\%*}{*)},         % if you want to add a comment within your code
 		morekeywords={*,...}            % if you want to add more keywords to the set
 	} 
-\usetikzlibrary{matrix}
+	
+	\usepgfplotslibrary{external} 
+	\tikzexternalize[prefix=tikz/]

@@ -1,19 +1,21 @@
 %%%%%%% Commandes Perso %%%%%%%%
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 \DeclareMathOperator{\Ham}{\mathcal{H}}	% Opérateur hamiltonien
+\DeclareMathOperator*{\argmin}{\text{argmin}}	% Opérateur argument du min
+\DeclareMathOperator*{\argmax}{\text{argmax}}	% Opérateur argument du max
 \DeclareMathOperator{\sinc}{\text{sinc}} % sinus cardinal
 \renewcommand{\Re}{\text{Re}}			 % Partie réelle
 \DeclareMathOperator{\sgn}{\text{sgn}}	 % Fonction signe
 \DeclareMathOperator{\e}{\text{e}}		 % L'opérateur exponentiel e
 \newcommand{\iu}{\mathrm{i}}			 % i imaginaire complexe
 \newcommand{\deriv}{\text{d}}			 % le d de la différenciabilité
-\newcommand\smallO{                      % petit "ô"
+\newcommand\smallO{
 	\mathchoice
 	{{\scriptstyle\mathcal{O}}}% \displaystyle
 	{{\scriptstyle\mathcal{O}}}% \textstyle
 	{{\scriptscriptstyle\mathcal{O}}}% \scriptstyle
 	{\scalebox{.7}{$\scriptscriptstyle\mathcal{O}$}}%\scriptscriptstyle
-}
+} % Petit O
 \newcommand{\ens}[1]{\mathbb{#1}}              					%Ensemble usuelle : N, Z, R, C, Q, K
 \newcommand{\abs}[1]{\left\vert {#1}\right\vert}				%Valeur absolue
 \newcommand{\partiel}[2]{\frac{\partial {#1}}{\partial {#2}}}	%derivée partielle
@@ -50,29 +52,6 @@
 \newcommand{\vecteur}[1]{\overrightarrow{#1}\hspace*{-2pt}}							%Vecteur avec une grande fleche
 \newcommand{\Int}[4]{\int_{#1}^{#2} {#3} \mathrm{d}#4}					%Intégrale
 \renewcommand{\thefootnote}{(\alph{footnote})}	
-
-%% colorbox function command
-\newcommand*{\colorboxed}{}
-\def\colorboxed#1#{%
-	\colorboxedAux{#1}%
-}
-\newcommand*{\colorboxedAux}[3]{%
-	% #1: optional argument for color model
-	% #2: color specification
-	% #3: formula
-	\begingroup
-	\colorlet{cb@saved}{.}%
-	\color#1{#2}%
-	\boxed{%
-		\color{cb@saved}%
-		#3%
-	}%
-	\endgroup
-}
-
-\setlength{\fboxrule}{0.3mm}
-
-
 \DeclareMathOperator{\rot}{\vecteur{\text{rot}}} 						% Rotationnel
 \DeclareMathOperator{\divergence}{\mathrm{div}}						% Divergence
 \DeclareMathOperator{\gradient}{\vecteur{\mathrm{grad}}}				% Gradient
@@ -97,9 +76,7 @@
 }
 
 
-
-
-\setBold[0.2] % Active la police grasse 
+%\setBold % Active la police grasse 
 
 %%%%%%%%% Environnement Perso %%%%%%%%
 \theoremstyle{definition}	 %Garde la même police pour l'environnement 
